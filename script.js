@@ -146,12 +146,12 @@ function salvarDesenho() {
   const pixels3 = document.querySelectorAll('.pixel');
   const desenho = {};
 
-  pixels3.forEach((pixel, index) => {
-    const cor = getComputedStyle(pixel).backgroundColor;
-    desenho[index] = cor;
-  });
+  for (let i = 0; i < pixels3.length; i += 1) {
+    const cor = getComputedStyle(pixels3[i]).backgroundColor;
+    desenho[i] = cor;
 
-  localStorage.setItem('pixelBoard', JSON.stringify(desenho));
+    localStorage.setItem('pixelBoard', JSON.stringify(desenho));
+  }
 }
 
 function recuperarDesenho() {
