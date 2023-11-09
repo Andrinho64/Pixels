@@ -89,7 +89,8 @@ for (let i = 0; i < pixels2.length; i += 1) {
   pixels2[i].addEventListener('click', (event) => {
     const selectedColor = document.querySelector('.selected');
     if (selectedColor) {
-      event.target.style.backgroundColor = getComputedStyle(selectedColor).backgroundColor;
+      const corSelecionada = selectedColor.style.backgroundColor;
+      event.target.style.backgroundColor = corSelecionada;
     }
   });
 }
